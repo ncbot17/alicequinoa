@@ -19,7 +19,7 @@ app.get('/bye', function(req, res){
     res.send('Bye, bye!');
 });
 */
-
+/*
 MongoClient.connect(mongoUrl, function(err, db) {
     if (err) throw err;
     db.collection("quinColl02").find({}).toArray(function(err, result) {
@@ -30,9 +30,16 @@ MongoClient.connect(mongoUrl, function(err, db) {
     });
   });
 
+
 app.get('/', function(req, res){
     res.send(queryRes);
 });
+*/
+
+app.get('/', function(req, res){
+    res.send("Hola");
+});
+
 
 app.listen(port, function(){
     console.log("Express app listening on port " + port);
