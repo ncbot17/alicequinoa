@@ -34,12 +34,12 @@ MongoClient.connect(mongoUrl, function(err, db) {
 app.get('/', function(req, res){
     res.send(queryRes);
 });
-*/
+
 
 app.get('/', function(req, res){
     res.send("Hola");
 });
-
+*/
 
 app.listen(port, function(){
     console.log("Express app listening on port " + port);
