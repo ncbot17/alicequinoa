@@ -41,6 +41,6 @@ app.get('/', function(req, res){
 });
 */
 
-app.listen(port, function(){
+app.listen((process.env.PORT || 8000), function(){
     console.log("Express app listening on port " + port);
 });
