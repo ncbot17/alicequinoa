@@ -1,7 +1,7 @@
 {
-  "name": "Consulta alimento",
+  "name": "consultaalimento",
   "version": "1.0.0",
-  "description": "Consulta alimento",
+  "description": "consultaalimento",
   "main": "alimento.js",
   "scripts": {
     "start": "node alimento.js"
