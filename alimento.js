@@ -5,6 +5,21 @@ const bodyParser = require('body-parser');
 
 const restService = express();
 
+var MongoClient = require('mongodb').MongoClient;
+var mongoUrl = "mongodb://RicMartinez:RicMartinez@ds161022.mlab.com:61022/quinoadb";
+var queryRes;
+
+MongoClient.connect(mongoUrl, function(err, db) {
+    if (err) throw err;
+    db.collection("quinColl02").find({}).toArray(function(err, result) {
+      if (err) throw err;
+      queryRes = result;
+      //console.log(result);
+      db.close();
+    });
+  });
+
+
 restService.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -18,7 +33,10 @@ restService.post('/echo', function(req, res) {
     return res.json({
         speech: speech,
         displayText: speech,
-        source: 'webhook-echo-sample'
+        source: 'webhook-echo-sample',
+        data: {
+            "queryRes": queryRes
+        }
     });
 });
 
