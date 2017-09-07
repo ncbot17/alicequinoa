@@ -1,0 +1,14 @@
+{
+  "name": "Consulta alimento",
+  "version": "1.0.0",
+  "description": "Consulta alimento",
+  "main": "alimento.js",
+  "scripts": {
+    "start": "node alimento.js"
+  },
+  "author": "RM",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
