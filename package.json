@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "add later"
+    "url": "https://github.com/ncbot17/alicequinoa"
   },
   "keywords": [
     "facebook",
@@ -17,7 +17,7 @@
     "bot",
     "webhook",
     "node.js"
-  ],
+  ],https://github.com/ncbot17/alicequinoa
   "author": "RM",
   "license": "ISC",
   "dependencies": {
