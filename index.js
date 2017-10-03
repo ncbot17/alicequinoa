@@ -12,7 +12,8 @@ app.set('port', (process.env.port||8000));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.get('/', function(req,res){
-    res.send('Hello Youtube!')
+    console.log('RIC 1');
+    res.send('Hello Youtube!');
 })
 
 app.get('/webhook/', function(req, res){
