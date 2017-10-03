@@ -24,6 +24,6 @@ app.get('/webhook/', function(req, res){
     res.send('No entry');
 })
 
-app.listen(app.get('port'), function(){
+app.listen(process.env.port||5000, function(){
     console.log('running on port', app.get('port'));
 })
