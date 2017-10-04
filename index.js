@@ -2,6 +2,8 @@
 A FIRST TRY TO INTERCONNECT FACEBOOK AND HEROKU
 */
 
+'use strict';
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
