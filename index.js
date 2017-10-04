@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 
 const app = express();
-app.set('port', (process.env.port||8300));
+app.set('port', (process.env.port||5000));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -24,6 +24,6 @@ app.get('/webhook/', function(req, res){
     res.send('No entry');
 })
 
-app.listen(port, function(){
+app.listen(app.get('port'), function(){
     console.log('running on port', app.get('port'));
 })
