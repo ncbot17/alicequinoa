@@ -62,10 +62,11 @@ app.post('/webhook', function (req, res) {
   function receivedMessage(event) {
     // Putting a stub for now, we'll expand it in the following steps
     console.log("Message data: ", event.message);
-    console.log("FB_VERIFY_TOKEN: " + token);
-    console.log("FB_ACCESS_TOKEN: " + access);
+
   }
 
 app.listen(app.get('port'), function(){
     console.log('running on port', app.get('port'))
+    console.log("FB_VERIFY_TOKEN: " + token);
+    console.log("FB_ACCESS_TOKEN: " + access);
 })
