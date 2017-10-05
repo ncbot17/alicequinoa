@@ -18,14 +18,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.get('/', function(req,res){
     res.send('Hello Youtube!');
+    console.log("=================")
+    console.log(req.query)
+    console.log("=================")
 })
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.verify_token'] === token) {
     res.send(req.query['hub.challenge'])
-    console.log("=================")
-    console.log(req.query)
-    console.log("=================")
+
     
   }
   res.send('No entry')
