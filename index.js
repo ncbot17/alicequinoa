@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 
 const token = process.env.FB_VERIFY_TOKEN
-const access = process.env.FB_ACCESS_TOKEN
+const PAGE_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN
 
 const app = express();
 app.set('port', (process.env.PORT||5000));
