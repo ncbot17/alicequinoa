@@ -97,7 +97,7 @@ function greetFbId(recipientId, fbToken){
   var fQuery = fbGraph + recipientId + fbFields + fbToken;
   fQuery = fbGraph + recipientId + fbFields + fbToken;
   console.log('query facebook id: ' + fQuery + '\n');
-  fetch = fetch(fQuery)
+  fetch(fQuery)
       .then(rsp => rsp.json())
       .then(json => {
         if (json.error && json.error.message) {
