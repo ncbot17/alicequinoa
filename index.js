@@ -95,7 +95,7 @@ function greetFbId(recipientId, fbToken){
   const fbGraph = 'https://graph.facebook.com/'
   const fbFields = '?&access_token='
   var fQuery = fbGraph + recipientId + fbFields + fbToken;
-  fQuery = fbGraph + id + fbFields + fbToken;
+  fQuery = fbGraph + recipientId + fbFields + fbToken;
   fetch = fetch(fQuery)
       .then(rsp => rsp.json())
       .then(json => {
