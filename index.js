@@ -83,7 +83,7 @@ function receivedMessage(event) {
         break;
 
       default:
-        greetFbId(senderID, token);
+        greetFbId(senderID, PAGE_ACCESS_TOKEN);
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
