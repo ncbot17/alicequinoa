@@ -7,7 +7,7 @@ A FIRST TRY TO INTERCONNECT FACEBOOK AND HEROKU
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
-var fetch = requiere('node-fetch');
+var fetch = require('node-fetch');
 
 const token = process.env.FB_VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN;
