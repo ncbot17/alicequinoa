@@ -96,13 +96,17 @@ function greetFbId(recipientId, fbToken){
   const fbFields = '?&access_token='
   var fQuery = fbGraph + recipientId + fbFields + fbToken;
   fQuery = fbGraph + recipientId + fbFields + fbToken;
+  console.log('query facebook id: ' + fquery + '\n');
   fetch = fetch(fQuery)
       .then(rsp => rsp.json())
       .then(json => {
         if (json.error && json.error.message) {
           throw new Error(json.error.message);
         }
-        sendTextMessage(recipientId, "Hola " + json.first_name + '\n');  
+        console.log("===========");
+        let msg = 'Hola ' + json.first_name;
+        console.log(msg);
+        sendTextMessage(recipientId, msg + '\n');  
         return json;
       });
 }
