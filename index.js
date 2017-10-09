@@ -7,9 +7,10 @@ A FIRST TRY TO INTERCONNECT FACEBOOK AND HEROKU
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+var fetch = requiere('node-fetch');
 
-const token = process.env.FB_VERIFY_TOKEN
-const PAGE_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN
+const token = process.env.FB_VERIFY_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN;
 
 const app = express();
 app.set('port', (process.env.PORT||5000));
@@ -18,16 +19,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.get('/', function(req,res){
     res.send('Hello Youtube!');
-    console.log("=================")
-    console.log(req.query)
-    console.log("=================")
 })
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.verify_token'] === token) {
-    res.send(req.query['hub.challenge'])
-
-    
+    res.send(req.query['hub.challenge'])    
   }
   res.send('No entry')
 });
@@ -87,11 +83,28 @@ function receivedMessage(event) {
         break;
 
       default:
+        greetFbId(senderID, token);
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }
+}
+
+function greetFbId(recipientId, fbToken){
+  const fbGraph = 'https://graph.facebook.com/'
+  const fbFields = '?&access_token='
+  var fQuery = fbGraph + id + fbFields + fbToken;
+  fQuery = fbGraph + id + fbFields + fbToken;
+  fetch = fetch(fQuery)
+      .then(rsp => rsp.json())
+      .then(json => {
+        if (json.error && json.error.message) {
+          throw new Error(json.error.message);
+        }
+        sendTextMessage(recipientId, "Hola " + json.first_name + '\n');  
+        return json;
+      });
 }
 
 function sendGenericMessage(recipientId) {
