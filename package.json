@@ -21,8 +21,9 @@
   "author": "RM",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "^1.18.2",
-    "express": "^4.16.1",
+    "express": "^4.16.2",
     "node-fetch": "^1.7.3",
     "request": "^2.83.0"
   },
